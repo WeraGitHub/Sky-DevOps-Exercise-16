@@ -19,6 +19,9 @@ class Employee(Person):
         self.holidays = holidays
         Employee.number_of_employees += 1
 
+    def __str__(self):
+        return f"{self.get_firstname()} {self.get_lastname()} is an instance of a class Employee (Person)."
+
     def get_company(self):
         return self.__company
 
