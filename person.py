@@ -15,7 +15,7 @@ class Person:
         Person.number_of_Person_instances += 1
 
     def __str__(self):
-        return f"{self.get_full_name()} is an instance of a class Person."
+        return f"{self.get_firstname()} {self.get_lastname()} is an instance of a class Person."
 
     # ######## getters and setters for the attributes ############################################################
     def get_firstname(self):
@@ -29,9 +29,6 @@ class Person:
 
     def set_lastname(self, new_lastname):
         self.lastname = new_lastname
-
-    def get_full_name(self):
-        return f"{self.get_firstname} {self.get_lastname}"
 
     def get_dob(self):
         return self._dob

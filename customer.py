@@ -13,6 +13,9 @@ class Customer(Person):
         self.loyalty_points = loyalty_points
         Customer.number_of_customers += 1
 
+    def __str__(self):
+        return f"{self.get_firstname()} {self.get_lastname()} is an instance of a class Customer (Person)."
+
     def get_customer_id(self):
         return self.__customer_id
 
@@ -29,7 +32,7 @@ class Customer(Person):
         self.loyalty_points += points
 
     def get_customer_info(self):
-        return f"Customer name: {self.get_full_name()}, id: {self.get_customer_id()}, loyalty points accumulated: " \
+        return f"Customer name: {self.get_firstname()} {self.get_lastname()}, id: {self.get_customer_id()}, loyalty points accumulated: " \
                f"{self.get_loyalty_points()}"
 
     def purchase(self, item):
