@@ -10,36 +10,38 @@ class Customer(Person):
         super().__init__(firstname, lastname, dob, gender, address)
         self.__customer_id = customer_id
         self.__customer = True
-        self.loyalty_points = loyalty_points
+        self._loyalty_points = loyalty_points
         Customer.number_of_customers += 1
 
     def __str__(self):
-        return f"{self.get_firstname()} {self.get_lastname()} is an instance of a class Customer (Person)."
+        return f"{self.firstname} {self.lastname} is an instance of a class Customer (Person)."
 
-    def get_customer_id(self):
+    @property
+    def customer_id(self):
         return self.__customer_id
 
     def is_customer(self):
         return self.__customer
 
-    def get_loyalty_points(self):
-        return self.loyalty_points
+    @property
+    def loyalty_points(self):
+        return self._loyalty_points
 
-    def set_loyalty_points(self, new_loyalty_points):
-        self.loyalty_points = new_loyalty_points
+    @loyalty_points.setter
+    def loyalty_points(self, new_loyalty_points):
+        self._loyalty_points = new_loyalty_points
 
     def add_loyalty_points(self, points):
         self.loyalty_points += points
 
     def get_customer_info(self):
-        return f"Customer name: {self.get_firstname()} {self.get_lastname()}, id: {self.get_customer_id()}" \
-               f", loyalty points accumulated: " \
-               f"{self.get_loyalty_points()}"
+        return f"Customer name: {self.firstname} {self.lastname}, id: {self.customer_id}, loyalty points accumulated:" \
+               f" {self.loyalty_points}"
 
     def purchase(self, item):
         self.add_loyalty_points(20)
-        print(f"{self.get_firstname()} bought {item} and earned extra 20 loyalty points")
-        print("Total loyalty points: " + str(self.get_loyalty_points()))
+        print(f"{self.firstname} bought {item} and earned extra 20 loyalty points")
+        print("Total loyalty points: " + str(self.loyalty_points))
 
     @classmethod
     def get_number_of_customers(cls):
