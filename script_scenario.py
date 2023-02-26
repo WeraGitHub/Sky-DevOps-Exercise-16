@@ -1,8 +1,10 @@
+import datetime
+
 from person import Person
 from customer import Customer
 from employee import Employee
 
-weronika = Person('Weronika', 'L', 10, 1, 1991, 'f', 'address 111')
+weronika = Person('Weronika', 'L', datetime.date(1991, 1, 10), 'f', 'address 111')
 
 print(str(weronika))
 weronika.walk()
@@ -13,8 +15,8 @@ print('Number of customer instances', Customer.get_number_of_customers())
 print('Number of employee instances', Employee.get_number_of_employees())
 print('\n')
 
-weronika_customer = Customer('Weronika', 'L', 10, 1, 1991, 'f', 'address', 2)
-weronika_customer_2 = Customer('Weronika', 'L', 10, 1, 1991, 'f', 'address', 2)
+weronika_customer = Customer('Weronika', 'L', datetime.date(1991, 1, 10), 'f', 'address', 2)
+weronika_customer_2 = Customer('Weronika', 'L', datetime.date(1991, 1, 10), 'f', 'address', 2)
 
 weronika_customer.walk()
 print(str(weronika_customer))
@@ -29,8 +31,8 @@ print('Number of customer instances', Customer.get_number_of_customers())
 print('Number of employee instances', Employee.get_number_of_employees())
 print('\n')
 
-weronika_employee = Employee('Weronika', 'L', 10, 1, 1991, 'f', 'address', 'sky', 'DevOps', 'expert', 2, 1, 2, 2020,
-                             50000, 35)
+weronika_employee = Employee('Weronika', 'L', datetime.date(1991, 1, 10), 'f', 'address', 'sky', 'DevOps', 'expert', 2,
+                             datetime.date(2020, 2, 3), 50000, 35)
 
 print(str(weronika_employee))
 weronika_employee.laugh()

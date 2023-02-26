@@ -5,10 +5,10 @@ class Person:
 
     number_of_Person_instances = 0
 
-    def __init__(self, firstname, lastname, dob_day, dob_month, dob_year, gender, address):
+    def __init__(self, firstname, lastname, dob, gender, address):
         self.firstname = firstname
         self.lastname = lastname
-        self._dob = datetime.datetime(dob_year, dob_month, dob_day)
+        self._dob = dob
         self.gender = gender
         self.address = address
         self.__person = True
