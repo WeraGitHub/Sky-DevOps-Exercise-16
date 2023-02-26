@@ -5,9 +5,10 @@ from person import Person
 class Employee(Person):
 
     number_of_employees = 0
-
+    
     def __init__(self, firstname, lastname, dob, gender, address, company, department, position, employee_id,
                  start_date, salary, holidays=25):
+
         super().__init__(firstname, lastname, dob, gender, address)
         self.__company = company
         self._department = department
