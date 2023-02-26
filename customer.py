@@ -5,9 +5,9 @@ class Customer(Person):
 
     number_of_customers = 0
 
-    def __init__(self, firstname, lastname, dob_day, dob_month, dob_year, gender, address, customer_id,
+    def __init__(self, firstname, lastname, dob, gender, address, customer_id,
                  loyalty_points=0):
-        super().__init__(firstname, lastname, dob_day, dob_month, dob_year, gender, address)
+        super().__init__(firstname, lastname, dob, gender, address)
         self.__customer_id = customer_id
         self.__customer = True
         self._loyalty_points = loyalty_points

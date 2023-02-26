@@ -4,10 +4,10 @@ import datetime
 class Person:
     number_of_Person_instances = 0
 
-    def __init__(self, firstname, lastname, dob_day, dob_month, dob_year, gender, address):
+    def __init__(self, firstname, lastname, dob, gender, address):
         self._firstname = firstname
         self._lastname = lastname
-        self.__dob = datetime.datetime(dob_year, dob_month, dob_day)
+        self.__dob = dob
         self._gender = gender
         self._address = address
         self.__person = True

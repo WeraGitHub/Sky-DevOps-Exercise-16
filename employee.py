@@ -6,15 +6,15 @@ class Employee(Person):
 
     number_of_employees = 0
 
-    def __init__(self, firstname, lastname, dob_day, dob_month, dob_year, gender, address, company, department,
-                 position, employee_id, start_date_day, start_day_month, start_day_year, salary, holidays=25):
-        super().__init__(firstname, lastname, dob_day, dob_month, dob_year, gender, address)
+    def __init__(self, firstname, lastname, dob, gender, address, company, department, position, employee_id,
+                 start_date, salary, holidays=25):
+        super().__init__(firstname, lastname, dob, gender, address)
         self.__company = company
         self._department = department
         self._position = position
         self.__employee_id = employee_id
         self.__employee = True
-        self.__start_date = datetime.datetime(start_day_year, start_day_month, start_date_day)
+        self.__start_date = start_date
         self._salary = salary
         self._holidays = holidays
         Employee.number_of_employees += 1
